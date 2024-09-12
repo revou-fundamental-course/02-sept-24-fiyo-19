@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: khaki;
+    padding: 15px;
+}
+
+header h1{
+    background-color: #F4A460;
+    font-size: 3rem;
+}
+
+@media only screen and (max-width: 425px){
+    header h1{
+        font-size: 2rem;
+    }
+}
+
+header h1, header p{
+    text-align: center;
+    padding: 5px 0px;
+}
+
+header p{
+    font-size: 1.3rem;
+}
+
+@media only screen and (max-width: 425px){
+    header p{
+        font-size: 1rem;
+    }
+}
+
+main .calculator-menu{
+    margin: 20px 0px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+main .operasi-segitiga h1, main .operasi-segitiga img, main .operasi-segitiga .rumus-segitiga,
+main .operasi-jajar-genjang h1, main .operasi-jajar-genjang img, main .operasi-jajar-genjang .rumus-jajar-genjang{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .operasi-segitiga img,
+main .operasi-jajar-genjang img{
+    width: 20%;
+    margin: auto;
+}
+
+@media only screen and (max-width: 425px){
+    main .operasi-segitiga img,
+    main .operasi-jajar-genjang img{
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 567px) and (max-width: 992px){
+    main .operasi-segitiga img,
+    main .operasi-jajar-genjang img{
+        width: 40%;
+    }
+}
+
+main .operasi-segitiga h1,
+main .operasi-jajar-genjang h1{
+    font-size: 1.5rem;
+    margin: 10px 0px;
+}
+
+@media only screen and (max-width: 425px){
+    main .operasi-segitiga h1,
+    main .operasi-jajar-genjang h1{
+        font-size: 1.2rem;
+    }
+}
+
+main .operasi-segitiga form,
+main .operasi-jajar-genjang form{
+    display: flex;
+    flex-direction: column;
+}
+
+main .operasi-segitiga hr,
+main .operasi-jajar-genjang hr{
+    margin: 50px 0px 0px 0px;
+}
+
+main .operasi-segitiga form h1,
+main .operasi-jajar-genjang form h1{
+    margin: 20px;
+}
+
+main .operasi-segitiga form input,
+main .operasi-jajar-genjang form input{
+    padding: 8px 10px;
+    border-radius: 4px;
+    font-size: 1.1rem;
+}
+
+main .operasi-segitiga form .button-reset,
+main .operasi-jajar-genjang form .button-reset{
+    display: flex;
+    justify-content: end;
+}
+
+main .operasi-segitiga form .button-mobile,
+main .operasi-jajar-genjang form .button-mobile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+main .operasi-segitiga form .hitung, main .operasi-segitiga form .reset,
+main .operasi-jajar-genjang form .hitung, main .operasi-jajar-genjang form .reset{
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    width: 10%;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 20px 0px;
+}
+
+@media only screen and (max-width: 767px){
+    main .operasi-segitiga form #reset-desktop, main .operasi-jajar-genjang form #reset-desktop{
+        display: none;
+    }
+
+    main .operasi-segitiga form .hitung, main .operasi-segitiga form .reset,
+    main .operasi-jajar-genjang form .hitung, main .operasi-jajar-genjang form .reset{
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    main .operasi-segitiga form #reset-mobile, main .operasi-jajar-genjang form #reset-mobile{
+        display: none;
+    }
+}
+
+main .operasi-segitiga form  .hitung, main .operasi-segitiga form .button-mobile #reset-mobile, main .operasi-jajar-genjang form .button-mobile #reset-mobile
+main .operasi-jajar-genjang form  .hitung{
+    margin: 0px 10px;
+}
+
+main .operasi-segitiga form .reset,
+main .operasi-jajar-genjang form .reset{
+    background-color: #FF0000;
+}
+
+main .operasi-segitiga form .reset:hover,
+main .operasi-jajar-genjang form .reset:hover{
+    background-color: #DC143C;
+}
+
+main .operasi-segitiga form .hitung,
+main .operasi-jajar-genjang form .hitung{
+    background-color: #32CD32;
+}
+
+main .operasi-segitiga form .hitung:hover,
+main .operasi-jajar-genjang form .hitung:hover{
+    background-color: #3CB371;
+}

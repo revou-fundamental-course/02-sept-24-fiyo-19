@@ -4,13 +4,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculate It!</title>
+    <link rel="icon" href="assets/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
 </head>
 
 <body>
+    <header>
+        <h1>Calculate It!</h1>
+        <p>Selamat datang di Calculate It! <br>
+            Hitung luas dan keliling segitiga dan jajar genjang anda disini.
+        </p>
+    </header>
+    <main>
+        <section class="calculator-menu">
+            <div class="calculator-menu-list">
+                <label for="pilihan">Pilih operasi :</label>
+                <select id="pilihan">
+                    <option value="">--Pilih--</option>
+                    <option value="option1">Luas segitiga</option>
+                    <option value="option2">Keliling segitiga</option>
+                    <option value="option3">Luas jajar genjang</option>
+                    <option value="option4">Keliling jajar genjang</option>
+                </select>
+            </div>
+        </section>
 
+        <section id="operasi-luas-jajar-genjang" class="operasi-jajar-genjang" style="display: none;">
+            <h1>Luas Jajar Genjang</h1>
+            <img src="assets/luas-jajar-genjang.jpeg" alt="">
+            <p>Rumus Luas Jajar Genjang :</p>
+            <p class="rumus-jajar-genjang">L = a x t</p>
+            <p>Keterangan : <br>
+                K : Luas <br>
+                a : Alas <br>
+                t : Tinggi<br>
+            </p>
+            <hr>
+            <form class="form-operasi-jajar-genjang" action="">
+                <h1>Hitung Luas Jajar Genjang</h1>
+                <div class="button-reset">
+                    <button id="reset-desktop" class="reset" type="button" onclick="resetForm()">Reset</button>
+                </div>
+                <label for="alas-luas-jajar-genjang"></label>
+                <input type="number" id="alas-luas-jajar-genjang" name="alas-luas-jajar-genjang"
+                    placeholder="Nilai Alas">
+                <br>
+                <label for="tinggi-luas-jajar-genjang"></label>
+                <input type="number" id="tinggi-luas-jajar-genjang" name="tinggi-luas-jajar-genjang"
+                    placeholder="Nilai Tinggi">
+                <br>
+                <br><br>
+                <div id="prosesPerhitunganLuasJajarGenjang"></div>
+
+                <div class="button-mobile">
+                    <button class="hitung" type="button"
+                        onclick="validasiKonfirmasi('luas jajar genjang')">Hitung</button>
+                    <button id="reset-mobile" class="reset" type="button" onclick="resetForm()">Reset</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="operasi-keliling-jajar-genjang" class="operasi-jajar-genjang" style="display: none;">
+            <h1>Keliling Jajar Genjang</h1>
+            <img src="assets/keliling-jajar-genjang.jpeg" alt="">
+            <p>Rumus Keliling Jajar Genjang :</p>
+            <p class="rumus-jajar-genjang">K = 2 x (a + b)</p>
+            <p>Keterangan : <br>
+                K : Keliling <br>
+                a : Alas <br>
+                b : Lebar<br>
+            </p>
+            <hr>
+            <form class="form-operasi-jajar-genjang" action="">
+                <h1>Hitung Keliling Jajar Genjang</h1>
+                <div class="button-reset">
+                    <button id="reset-desktop" class="reset" type="button" onclick="resetForm()">Reset</button>
+                </div>
+                <label for="alas-keliling-jajar-genjang"></label>
+                <input type="number" id="alas-keliling-jajar-genjang" name="alas-keliling-jajar-genjang"
+                    placeholder="Nilai Alas">
+                <br>
+                <label for="lebar-keliling-jajar-genjang"></label>
+                <input type="number" id="lebar-keliling-jajar-genjang" name="lebar-keliling-jajar-genjang"
+                    placeholder="Nilai Lebar">
+                <br>
+                <br><br>
+                <div id="prosesPerhitunganKelilingJajarGenjang"></div>
+
+                <div class="button-mobile">
+                    <button class="hitung" type="button"
+                        onclick="validasiKonfirmasi('keliling jajar genjang')">Hitung</button>
+                    <button id="reset-mobile" class="reset" type="button" onclick="resetForm()">Reset</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="operasi-keliling-segitiga" class="operasi-segitiga" style="display: none;">
+            <h1>Keliling Segitiga</h1>
+            <img src="assets/keliling-segitiga.png" alt="">
+            <p>Rumus Keliling Segitiga :</p>
+            <p class="rumus-segitiga">K = a + b + c</p>
+            <p>Keterangan : <br>
+                K : Keliling <br>
+                a : Panjang sisi a <br>
+                b : Panjang sisi b <br>
+                c : Panjang sisi c <br>
+            </p>
+            <hr>
+            <form class="form-operasi-segitiga" action="">
+                <h1>Hitung Keliling Segitiga</h1>
+                <div class="button-reset">
+                    <button id="reset-desktop" class="reset" type="button" onclick="reset()">Reset</button>
+                </div>
+                <label for="sisi-a-keliling-segitiga"></label>
+                <input type="number" id="sisi-a-keliling-segitiga" name="sisi-a-keliling-segitiga"
+                    placeholder="Nilai Sisi A">
+                <br>
+                <label for="sisi-b-keliling-segitiga"></label>
+                <input type="number" id="sisi-b-keliling-segitiga" name="sisi-b-keliling-segitiga"
+                    placeholder="Nilai Sisi B">
+                <br>
+                <label for="sisi-c-keliling-segitiga"></label>
+                <input type="number" id="sisi-c-keliling-segitiga" name="sisi-c-keliling-segitiga"
+                    placeholder="Nilai Sisi C">
+                <br><br>
+                <div id="prosesPerhitunganKelilingSegitiga"></div>
+
+                <div class="button-mobile">
+                    <button class="hitung" type="button"
+                        onclick="validasiKonfirmasi('keliling segitiga')">Hitung</button>
+                    <button id="reset-mobile" class="reset" type="button" onclick="resetForm()">Reset</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="operasi-luas-segitiga" class="operasi-segitiga" style="display: none;">
+            <h1>Luas Segitiga</h1>
+            <img src="assets/luas-segitiga.png" alt="">
+            <p>Rumus Luas Segitiga :</p>
+            <p class="rumus-segitiga">L = 1/2 x a x t</p>
+            <p>Keterangan : <br>
+                L : Luas <br>
+                a : Panjang Alas <br>
+                t : Tinggi
+            </p>
+            <hr>
+            <form class="form-operasi-segitiga" action="">
+                <h1>Hitung Luas Segitiga</h1>
+                <div class="button-reset">
+                    <button id="reset-desktop" class="reset" type="button" onclick="reset()">Reset</button>
+                </div>
+                <label for="alas-luas-segitiga"></label>
+                <input type="number" id="alas-luas-segitiga" name="alas-luas-segitiga" placeholder="Nilai Alas">
+                <br><br>
+                <label for="tinggi-luas-segitiga"></label>
+                <input type="number" id="tinggi-luas-segitiga" name="tinggi-luas-segitiga" placeholder="Nilai Tinggi"
+                    required>
+                <br><br>
+                <div id="prosesPerhitunganLuasSegitiga"></div>
+
+                <div class="button-mobile">
+                    <button class="hitung" type="button" onclick="validasiKonfirmasi('luas segitiga')">Hitung</button>
+                    <button id="reset-mobile" class="reset" type="button" onclick="resetForm()">Reset</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>
